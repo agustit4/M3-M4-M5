@@ -13,9 +13,9 @@ DROP TABLE IF EXISTS Productos;
 DROP TABLE IF EXISTS Clientes;
 DROP TABLE IF EXISTS Categorias;
 
-/* DEFINICI”N DEL ESQUEMA (DDL) Y RESTRICCIONES DE INTEGRIDAD */
+/* DEFINICI√ìN DEL ESQUEMA (DDL) Y RESTRICCIONES DE INTEGRIDAD */
 
--- 1. Tabla CategorÌas
+-- 1. Tabla Categor√≠as
 CREATE TABLE Categorias (
     ID_Categoria INT PRIMARY KEY,
     Nombre_Categoria VARCHAR(50) NOT NULL,
@@ -51,31 +51,31 @@ CREATE TABLE Ventas (
     Fecha_Venta DATE NOT NULL,
 );
 
-/* CARGA INICIAL DE DATOS Û Data Manipulation Language (DML): se usa para manipular la informaciÛn de las tablas. */
+/* CARGA INICIAL DE DATOS √≥ Data Manipulation Language (DML): se usa para manipular la informaci√≥n de las tablas. */
 
--- 1. Carga de CategorÌas
+-- 1. Carga de Categor√≠as
 INSERT INTO Categorias (ID_Categoria, Nombre_Categoria, Descripcion) VALUES 
-(1, 'ComputaciÛn', 'Laptops, PCs y monitores'),
-(2, 'Accesorios', 'PerifÈricos y complementos'),
+(1, 'Computaci√≥n', 'Laptops, PCs y monitores'),
+(2, 'Accesorios', 'Perif√©ricos y complementos'),
 (3, 'Audio', 'Auriculares y parlantes'),
 (4, 'Almacenamiento', 'Discos y memorias');
 
 -- 2. Carga de Clientes
 INSERT INTO Clientes (ID_Cliente, Nombre, Email, Ciudad, Fecha_Registro) VALUES 
-(1, 'MarÌa LÛpez',   'maria@mail.com',   'Buenos Aires', '2024-01-05'),
-(2, 'Carlos Ruiz',   'carlos@mail.com',  'CÛrdoba',      '2024-01-10'),
-(3, 'Ana GÛmez',     'ana@mail.com',     'Rosario',      '2024-02-01'),
+(1, 'Mar√≠a L√≥pez',   'maria@mail.com',   'Buenos Aires', '2024-01-05'),
+(2, 'Carlos Ruiz',   'carlos@mail.com',  'C√≥rdoba',      '2024-01-10'),
+(3, 'Ana G√≥mez',     'ana@mail.com',     'Rosario',      '2024-02-01'),
 (4, 'Pedro Sanz',    'pedro@mail.com',   'Mendoza',      '2024-02-15'),
-(5, 'Laura Torres',  'laura@mail.com',   'Tucum·n',      '2024-03-01');
+(5, 'Laura Torres',  'laura@mail.com',   'Tucum√°n',      '2024-03-01');
 
 -- 3. Carga de Productos
 INSERT INTO Productos (ID_Producto, Nombre_Producto, ID_Categoria, Precio, Stock, Activo) VALUES 
 (1, 'Laptop Pro 15',       1, 1200.00, 15, 1),
-(2, 'Mouse Inal·mbrico',   2,   28.00, 80, 1),
+(2, 'Mouse Inal√°mbrico',   2,   28.00, 80, 1),
 (3, 'Monitor 4K 27"',      1,  450.00, 12, 1),
 (4, 'Auriculares BT Pro',  3,  120.00, 35, 1),
 (5, 'SSD Externo 1TB',     4,  130.00, 18, 1),
-(6, 'Teclado Mec·nico',    2,   95.00, 40, 1);
+(6, 'Teclado Mec√°nico',    2,   95.00, 40, 1);
 
 -- 4. Carga de Ventas
 INSERT INTO Ventas (ID_Venta, ID_Cliente, ID_Producto, Cantidad, Precio_Unitario, Fecha_Venta) VALUES 
@@ -90,7 +90,7 @@ INSERT INTO Ventas (ID_Venta, ID_Cliente, ID_Producto, Cantidad, Precio_Unitario
 (9,  4, 4, 1,  120.00, '2024-03-14'),
 (10, 5, 3, 2,  450.00, '2024-03-15');
 
-/* VerificaciÛn de integridad */
+/* Verificaci√≥n de integridad */
 SELECT * FROM Categorias;
 SELECT * FROM Clientes;
 SELECT * FROM Productos;
