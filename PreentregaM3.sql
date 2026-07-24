@@ -1,4 +1,3 @@
-
 ----- PRE ENTREGA M3 -----
 
 /* CREAR BASE DE DATOS */
@@ -38,7 +37,7 @@ CREATE TABLE Productos (
     ID_Categoria INT FOREIGN KEY REFERENCES Categorias(ID_Categoria) NOT NULL,
     Precio DECIMAL(10,2) NOT NULL,
     Stock INT DEFAULT 0,
-    Activo TINYINT DEFAULT 1,
+    Activo TINYINT DEFAULT 1
 );
 
 -- 4. Tabla Ventas 
@@ -49,6 +48,7 @@ CREATE TABLE Ventas (
     Cantidad INT NOT NULL,
     Precio_Unitario DECIMAL(10,2) NOT NULL,
     Fecha_Venta DATE NOT NULL,
+	Canal VARCHAR(50) NOT NULL
 );
 
 /* CARGA INICIAL DE DATOS ó Data Manipulation Language (DML): se usa para manipular la información de las tablas. */
@@ -66,7 +66,8 @@ INSERT INTO Clientes (ID_Cliente, Nombre, Email, Ciudad, Fecha_Registro) VALUES
 (2, 'Carlos Ruiz',   'carlos@mail.com',  'Córdoba',      '2024-01-10'),
 (3, 'Ana Gómez',     'ana@mail.com',     'Rosario',      '2024-02-01'),
 (4, 'Pedro Sanz',    'pedro@mail.com',   'Mendoza',      '2024-02-15'),
-(5, 'Laura Torres',  'laura@mail.com',   'Tucumán',      '2024-03-01');
+(5, 'Laura Torres',  'laura@mail.com',   'Tucumán',      '2024-03-01'),
+(6, 'Cliente Prueba', 'cliente.prueba@mail.com', 'Buenos Aires', '2026-07-24');
 
 -- 3. Carga de Productos
 INSERT INTO Productos (ID_Producto, Nombre_Producto, ID_Categoria, Precio, Stock, Activo) VALUES 
@@ -78,17 +79,17 @@ INSERT INTO Productos (ID_Producto, Nombre_Producto, ID_Categoria, Precio, Stock
 (6, 'Teclado Mecánico',    2,   95.00, 40, 1);
 
 -- 4. Carga de Ventas
-INSERT INTO Ventas (ID_Venta, ID_Cliente, ID_Producto, Cantidad, Precio_Unitario, Fecha_Venta) VALUES 
-(1,  1, 1, 2, 1200.00, '2024-03-05'),
-(2,  2, 2, 5,   28.00, '2024-03-06'),
-(3,  3, 3, 1,  450.00, '2024-03-07'),
-(4,  1, 4, 2,  120.00, '2024-03-08'),
-(5,  4, 5, 3,  130.00, '2024-03-10'),
-(6,  2, 6, 4,   95.00, '2024-03-11'),
-(7,  5, 1, 1, 1200.00, '2024-03-12'),
-(8,  3, 2, 8,   28.00, '2024-03-13'),
-(9,  4, 4, 1,  120.00, '2024-03-14'),
-(10, 5, 3, 2,  450.00, '2024-03-15');
+INSERT INTO Ventas (ID_Venta, ID_Cliente, ID_Producto, Cantidad, Precio_Unitario, Fecha_Venta, Canal) VALUES 
+(1,  1, 1, 2, 1200.00, '2024-03-05', 'Online'),
+(2,  2, 2, 5,   28.00, '2024-03-06', 'Presencial'),
+(3,  3, 3, 1,  450.00, '2024-03-07', 'Online'),
+(4,  1, 4, 2,  120.00, '2024-03-08', 'Online'),
+(5,  4, 5, 3,  130.00, '2024-03-10', 'Online'),
+(6,  2, 6, 4,   95.00, '2024-03-11', 'Online'),
+(7,  5, 1, 1, 1200.00, '2024-03-12', 'Presencial'),
+(8,  3, 2, 8,   28.00, '2024-03-13', 'Online'),
+(9,  4, 4, 1,  120.00, '2024-03-14', 'Online'),
+(10, 5, 3, 2,  450.00, '2024-03-15', 'Online');
 
 /* Verificación de integridad */
 SELECT * FROM Categorias;
