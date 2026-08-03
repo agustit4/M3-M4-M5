@@ -6,7 +6,7 @@
 
 ## 📖 Descripción
 
-Este proyecto fue desarrollado como parte del curso de **Data Analytics** y tiene como objetivo modelar una base de datos relacional para una empresa de ventas de productos tecnológicos, implementar consultas SQL y obtener información relevante para la toma de decisiones comerciales.
+Este proyecto fue desarrollado como ejercicio del curso de **Data Analytics** y tiene como objetivo modelar una base de datos relacional para una empresa de ventas de productos tecnológicos, implementar consultas SQL y obtener información relevante para la toma de decisiones comerciales.
 
 A lo largo del proyecto se aplican conceptos de:
 
@@ -181,21 +181,18 @@ Consolidación de ventas por canal:
 
 # 💡 Insights de negocio
 
-### 📌 Producto de mayor valor
-
-El producto con ID 1 concentra la mayor facturación del período, representando una oportunidad para potenciar su comercialización mediante campañas específicas y estrategias de venta consultiva.
-
----
-
-### 📌 Incremento del ticket promedio
-
-El producto con mayor cantidad de unidades vendidas presenta una baja contribución a la facturación, por lo que resulta un buen candidato para acciones de **cross-selling** y **up-selling**.
+### 📌 Insight 1 – Potenciar el producto de mayor valor
+Promover la venta de un producto con un margen de $3.600 por unidad resulta considerablemente más eficiente que alcanzar un margen similar mediante la venta de 13 unidades que generan $364 cada una.
 
 ---
 
-### 📌 Fidelización de clientes
+### 📌 Oportunidad de aumentar el ticket promedio
+Incorporar al producto de mayor valor el producto de menor valor como una “promo” (“llevando este producto, te llevás este otro de regalo”). Elobjetivo es fidelizar los clientes estables y dar un “gesto comercial” en lugar de salir a buscar nuevos clientes (aprovechando que la venta ya está ocurriendo). Un pequeño aumento en el ticket promedio tiene un impacto directo en la facturación total sin necesidad de incrementar significativamente el volumen de ventas o los costos comerciales.
 
-Los clientes recurrentes representan una oportunidad para desarrollar programas de fidelización y promociones segmentadas, con el objetivo de aumentar el valor de vida del cliente (Customer Lifetime Value).
+---
+
+### 📌 Fidelización de clientes recurrentes
+Las promociones que matcheen los productos de mayor valor con los de menor valor pueden ser una buena estrategia de fidelización de los clientes que mayor volumen ($) representan.
 
 ---
 
