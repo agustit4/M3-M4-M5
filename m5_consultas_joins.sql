@@ -1,10 +1,9 @@
 USE Ventas_Tech_DB;
 
 -- ====================================================================================================
--- Consulta 1 — Vista base del proyecto (INNER JOIN)
--- Combina ventas, clientes, productos y categorías. 
--- * Nota: Se usa 'Ciudad' de Clientes como 'Región/Territorio'. 
--- * Si tu tabla Ventas no tiene la columna 'Canal', podés simularla o incluirla si la agregas a la tabla.
+-- Consulta 1 â€” Vista base del proyecto (INNER JOIN)
+-- Combina ventas, clientes, productos y categorÃ­as. 
+-- * Nota: Se usa 'Ciudad' de Clientes como 'RegiÃ³n/Territorio'. 
 -- ====================================================================================================
 
 SELECT 
@@ -26,8 +25,8 @@ INNER JOIN Categorias cat
     ON p.ID_Categoria = cat.ID_Categoria;
 
 -- ====================================================================================================
--- Consulta 2 — Clientes sin ventas (LEFT JOIN)
--- Identifica clientes registrados que aún no han realizado ninguna compra.
+-- Consulta 2 â€” Clientes sin ventas (LEFT JOIN)
+-- Identifica clientes registrados que aÃºn no han realizado ninguna compra.
 -- ====================================================================================================
 
 SELECT 
@@ -41,8 +40,8 @@ WHERE v.ID_Venta IS NULL;
 
 
 -- ====================================================================================================
--- Consulta 3 — Productos sin ventas (LEFT JOIN)
--- Identifica productos del catálogo que no tienen ninguna venta registrada.
+-- Consulta 3 â€” Productos sin ventas (LEFT JOIN)
+-- Identifica productos del catÃ¡logo que no tienen ninguna venta registrada.
 -- ====================================================================================================
 
 SELECT 
@@ -58,9 +57,9 @@ WHERE v.ID_Venta IS NULL;
 
 
 	-- ====================================================================================================
-	-- Consulta 4 — Consolidado por canal (UNION ALL + GROUP BY)
-	-- En caso de que las ventas no estén separadas por tablas o canal explícito, 
-	-- se simula la combinación entre ventas Online y Presenciales mediante subconsultas con UNION ALL.
+	-- Consulta 4 â€” Consolidado por canal (UNION ALL + GROUP BY)
+	-- En caso de que las ventas no estÃ©n separadas por tablas o canal explÃ­cito, 
+	-- se simula la combinaciÃ³n entre ventas Online y Presenciales mediante subconsultas con UNION ALL.
 	-- ====================================================================================================
 
 WITH Ventas_Consolidadas AS (
